@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Destroy Articles..."
+
+Article.destroy_all
+
+puts "Creating Articles"
+
+20.times do
+  Article.create(
+                title: Faker::Books::CultureSeries.culture_ship,
+                content: Faker::Books::CultureSeries.book
+                )
+end
+
+puts "DB Seeded"
